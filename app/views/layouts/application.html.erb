@@ -8,12 +8,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <%# <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="user.css"> %>
   </head>
       <div class="header">
         <div class="heder-inner">
           <div class="nav">
-          GolChu
+           <%= link_to "GolChu", root_path %>
           </div>
           <div class="nav-item">
             <ul class="nav-page-list">
@@ -23,8 +24,13 @@
             </ul>
           </div>
           <div class="nav-login">
-            <%= link_to "ログイン", "destroy_user_session_path", method: :delete %>
-            <%= link_to "新規登録", "new_prototype_path", class: "post" %>
+            <% if user_signed_in? %>
+              <%= link_to current_user.nickname %></li> 
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete  %></li> 
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path %>
+              <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+            <% end %>
           </div>
         </div>
       </div>

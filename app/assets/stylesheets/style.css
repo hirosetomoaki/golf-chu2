@@ -4,7 +4,7 @@
 
 
 .header {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   height: 100px;
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@ a {
 .big-bg::before{
   content: '';
   display: block;
-  padding-top: 50%;
+  /* padding-top: 50%; */
 }
 
 .message{ 
@@ -75,3 +75,4 @@ a {
   left: 200px;
   color: #fff;
 }
+
