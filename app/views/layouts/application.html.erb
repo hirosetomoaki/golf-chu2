@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
   </head>
-
+      <div class="header">
+        <div class="heder-inner">
+          <div class="nav">
+          GolChu
+          </div>
+          <div class="nav-item">
+            <ul class="nav-page-list">
+              <li class="list">仲間探し</li>
+              <li class="list">Photo</li>
+              <li class="list">商品</li>
+            </ul>
+          </div>
+          <div class="nav-login">
+            <%= link_to "ログイン", "destroy_user_session_path", method: :delete %>
+            <%= link_to "新規登録", "new_prototype_path", class: "post" %>
+          </div>
+        </div>
+      </div>
   <body>
-    <%= yield %>
+     <%= yield %>
   </body>
 </html>

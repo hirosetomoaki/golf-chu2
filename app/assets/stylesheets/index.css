@@ -1,0 +1,12 @@
+.main {
+  width: 100%;
+  height: 800px;
+}
+
+.main-inner {
+  font-size: 64px;
+  color: dimgrey;
+  padding-top: 200px;
+}
+
+
