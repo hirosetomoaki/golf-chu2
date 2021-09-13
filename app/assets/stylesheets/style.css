@@ -54,7 +54,7 @@ a {
 }
 
 .big-bg {
-  background-image: url(golf-1284012_1920.jpg);
+  background-image: url("golf-1284012_1920.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
