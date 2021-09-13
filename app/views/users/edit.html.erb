@@ -1,0 +1,58 @@
+<div class="big-bg">
+    <div class=main-user>
+      <div class="sign-l">
+          <h2>Edit Account</h2>
+          <h5>アカウントの編集</h5>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+          <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+      </div>
+        <div class='account-page__inner--right user-form'>
+          <%= form_with model: current_user, local: true do |f|%>
+            <div class='field'>
+                <%= f.label :nickname, "ニックネーム" %><br />
+                <%= f.text_field :nickname %>
+            </div>
+            <div class='field'>
+                <%= f.label :name, "名前" %><br />
+                <%= f.text_field :name, autofocus: true%>
+            </div>
+            <div class='field'>
+                <%= f.label :name_initials, "フリガナ" %><br />
+                <%= f.text_field :name_initials %>
+            </div>
+            <div class="field">
+              <%= f.label :state_id, "お住まい" %><br />
+              <%= f.text_field :state_id, id:"user_name" %>
+            </div>
+            
+            <div class="field">
+              <%= f.label :best_score, "ベストスコア" %><br />
+              <%= f.text_field :best_score, id:"user_name", placeholder:"例) 95" %>
+            </div>
+            
+            <div class='field'>
+                <%= f.label :email, "メールアドレス" %> <br />
+                <%= f.email_field :email%>
+             </div>
+
+             <div class="field">
+              <%= f.label :password, "パスワード" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> 文字以上)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation,"パスワード再入力" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+            
+            <div class='actions'>
+              <%= f.submit "Update", class: 'btn'%>
+            </div>
+          <% end %>
+        </div>
+      
+    </div>
+</div>
