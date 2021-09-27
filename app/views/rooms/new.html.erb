@@ -7,7 +7,31 @@
         <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: '2021/10/20 関東 一緒にコース周る人募集'%>
+        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: '2021/10/20 茨城県 9:30スタート 一緒にコース周る人募集'%>
+      </div>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :募集内容, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :concept, class: 'chat__room_name chat-room-form__input2', placeholder: '2021/10/20 茨城県 ゴルフ場 コース名 9:30 inスタート 男女募集'%>
+      </div>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :募集人数, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :member, class: 'chat__room_name chat-room-form__input2', placeholder: '2名'%>
+      </div>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :アベレージスコア, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :score, class: 'chat__room_name chat-room-form__input2', placeholder: '90台'%>
+      </div>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :年齢と性別, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :about_age, class: 'chat__room_name chat-room-form__input2', placeholder: '30代 男性'%>
       </div>
     </div>
      <div class='chat-room-form__field'>

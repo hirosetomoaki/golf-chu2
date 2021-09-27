@@ -21,13 +21,18 @@
                 <%= f.text_field :name_initials %>
             </div>
             <div class="field">
-              <%= f.label :state_id, "お住まい" %><br />
-              <%= f.text_field :state_id, id:"user_name" %>
+              <%= f.label :state, "お住まい" %><br />
+              <%= f.text_field :state, id:"user_name" %>
             </div>
             
             <div class="field">
               <%= f.label :best_score, "ベストスコア" %><br />
               <%= f.text_field :best_score, id:"user_name", placeholder:"例) 95" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :age, "年齢" %><br />
+              <%= f.text_field :age, id:"user_name", placeholder:"例) 35" %>
             </div>
             
             <div class='field'>
