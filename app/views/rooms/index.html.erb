@@ -1,0 +1,31 @@
+<div class='chat-main'>
+  <div class='chat-mide'>
+   <%= link_to "仲間を募集する", new_room_path, class: :create_room %>
+  </div>
+  <div class='room_right'>
+    <% @rooms.each do |room| %>
+        <div class='card'>
+          <div class='waku'>
+            <div class='room_name'>
+              <b><%= link_to room.name, room_path(room.id) %></b>
+            </div>
+            <div class='room_concept'>
+              <%= room.concept %>
+            </div>
+            <div class='room_score'>
+              <%= room.score %>
+            </div>
+            <div class='room_about_age'>
+              <%= room.about_age %>
+            </div>
+            <div class='side_name'>
+              募集人数 
+            </div>
+            <div class='room_member'>
+              <%= room.member %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

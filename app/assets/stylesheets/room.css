@@ -1,0 +1,185 @@
+/* チャットルーム作成 */
+
+.room-main{
+  /* display: flex; */
+  background-color: rgb(220, 238, 241);
+  height: 100vh;
+  width: 100%;
+  
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.left-side {
+  padding: 60px;
+  margin:  50px auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  width: 980px;
+  height: 400px;
+}
+
+.chat-room-form__field {
+  margin-top: 30px;
+}
+
+.chat-room-form__field--left {
+  float: left;
+  width: 30%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.chat-room-form__field--right {
+  float: right;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.chat-room-form__input {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.chat-room-form__input2 {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+
+.chat-room-form__label {
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.chat-room-form__action-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  color: #fff;
+  background-color: #38aef0;
+  border: 0;
+}
+
+/* チャットルーム作成 */
+.chat-main{
+  display: flex;
+}
+
+/* サイドバー */
+
+.chat-mide{
+  width: 200px;
+  height: 100vh;
+  background-color: rgb(220, 238, 241);
+}
+
+.create_room{
+  color: #000;
+  font-size: 20px;
+}
+
+/* サイドバー */
+.room_right{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(250, 248, 248);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+/* メイン */
+
+.card {
+  /* border:1px solid chartreuse; */
+  width: calc((100% - 50px) / 3);
+  height: 300px;
+  padding-left: 70px;
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+
+.waku{
+  border: 1px solid black;
+  padding: 20px 20px;
+  background-color: rgb(216, 237, 245);
+}
+
+.room_name {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.room_concept {
+  margin-bottom: 10px;
+}
+
+.room_score {
+  margin-bottom: 10px;
+}
+
+.room_about_age {
+  margin-bottom: 10px;
+}
+
+.room_member {
+  margin-bottom: 10px;
+}
+
+.side_name{
+  color: red;
+}
+
+/* メイン */
+
+/* 詳細 */
+
+.room_right_show{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(250, 248, 248);
+  display: flex;
+  justify-content: center;
+}
+
+.card_show{
+  margin-top: 30px;
+}
+
+.room_waku{
+  border: 1px solid black;
+  padding: 20px 20px;
+  background-color: rgb(216, 237, 245);
+}
+
+.prototype__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+.prototype__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
