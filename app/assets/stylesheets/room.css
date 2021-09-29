@@ -101,7 +101,7 @@ h1 {
   overflow: scroll;
 }
 
-
+/* メイン */
 
 .card {
   /* border:1px solid chartreuse; */
@@ -109,6 +109,13 @@ h1 {
   height: 300px;
   padding-left: 70px;
   padding-top: 30px;
+  margin-bottom: 40px;
+}
+
+.waku{
+  border: 1px solid black;
+  padding: 20px 20px;
+  background-color: rgb(216, 237, 245);
 }
 
 .room_name {
@@ -131,3 +138,12 @@ h1 {
 .room_member {
   margin-bottom: 10px;
 }
+
+.side_name{
+  color: red;
+}
+
+/* メイン */
+
+/* 詳細 */
+

@@ -7,6 +7,7 @@ class CreateRooms < ActiveRecord::Migration[6.0]
       t.string :score,       null: false
       t.string :about_age,   null: false
       t.string :member,      null: false
+      t.references :user,    null: false, foreign_key: true
       t.timestamps
     end
   end

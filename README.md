@@ -47,7 +47,7 @@
 | city                | string     | null: false |
 | street              | string     | null: false |
 | building_name       | string     |             |
-| phone               | string    | null: false |
+| phone               | string     | null: false |
 | buy                 | references | null: false, foreign_key: true |
 
 ### Association
@@ -56,9 +56,14 @@
 
 ## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| name      | string | null: false |
+| concept   | text   | null: false |
+| score     | string | null: false |
+| about_age | string | null: false |
+| member    | string | null: false |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 
