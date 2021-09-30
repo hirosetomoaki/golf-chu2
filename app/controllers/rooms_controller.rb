@@ -20,6 +20,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @message = Message.new
+    @messages = @room.messages
   end
 
   def edit
@@ -48,7 +50,6 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, :concept, :score, :about_age, :member, user_ids: []).merge(user_id: current_user.id)
   end
-
 
 
 end

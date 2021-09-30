@@ -17,6 +17,7 @@
 - has_many :buys
 - has_many :rooms, through: :room_users
 - has_many :photos
+- has_many :messages
 
 
 ## itemsテーブル
