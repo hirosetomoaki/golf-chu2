@@ -4,32 +4,61 @@
   </div>
   <div class='room_right_show'>
         <div class='card_show'>
-         <% if user_signed_in? && current_user.id == @room.user_id %>
-            <div class="prototype__manage">
-              <%= link_to "編集する", edit_room_path(@room.id), class: :prototype__btn %>
-              <%= link_to "削除する", room_path(@room.id), method: :delete, class: :prototype__btn %>
-            </div>
-         <% end %>
-          <div class='room_waku'>
-            <div class='room_name'>
-              <b><%=  @room.name %></b>
-            </div>
-            <div class='room_concept'>
-              <%= @room.concept %>
-            </div>
-            <div class='room_score'>
-              <%= @room.score %>
-            </div>
-            <div class='room_about_age'>
-              <%= @room.about_age %>
-            </div>
-            <div class='side_name'>
-              募集人数 
-            </div>
-            <div class='room_member'>
-              <%= @room.member %>
-            </div>
+            <% if user_signed_in? && current_user.id == @room.user_id %>
+              <div class="prototype__manage">
+                <%= link_to "編集する", edit_room_path(@room.id), class: :prototype__btn %>
+                <%= link_to "削除する", room_path(@room.id), method: :delete, class: :prototype__btn %>
+              </div>
+            <% end %>
+            <div class='room_waku'>
+              <div class='room_name'>
+                <b><%=  @room.name %></b>
+              </div>
+              <div class='room_concept'>
+                <%= @room.concept %>
+              </div>
+              <div class='room_score'>
+                <%= @room.score %>
+              </div>
+              <div class='room_about_age'>
+                <%= @room.about_age %>
+              </div>
+              <div class='side_name'>
+                募集人数 
+              </div>
+              <div class='room_member'>
+                <%= @room.member %>
+              </div>
+        </div>
+        <div class='message_waku'>
+          <div class='message_inner'>
+            <% if user_signed_in? %>
+             <%= form_with model: [@room, @message], local: true do |f|%>
+              <div class="message_comment">
+                <%= f.label :content, "コメント" %><br />
+                <%= f.text_field :content, placeholder: "参加したいです！", id:"comment_text" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+             <% end %> 
+            <% end %>
           </div>
+            <div class="comments">
+              <p>コメント一覧</p>
+              <% @messages.each do |message| %>
+                <p>
+                  <strong><%= link_to message.user.nickname, "/users/#{message.user_id}" %>：</strong>
+                  <%= message.content %>
+                     <%# <% if user_signed_in? && current_user.id == message.user_id %> 
+                        <%# <div class="message__manage"> %>
+                          <%# <%= link_to "編集する", edit_room_path(message.id), class: :prototype__btn %> 
+                          <%# <%= link_to "削除する", room_path(@room.message.id), method: :delete, class: :prototype__btn %> 
+                        <%# </div> %>
+                      <%# <% end %> 
+                </p>
+              <% end %>
+            </div>
         </div>
   </div>
 </div>
