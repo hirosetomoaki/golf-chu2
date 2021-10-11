@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+
+  extend ActiveHash::Associations::ActiveRecordExtensions 
+
   belongs_to :category
   belongs_to :product_status
   belongs_to :state
@@ -7,7 +10,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one :buy
-  has_one_attached :image
+  has_many_attached :images
 
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   validates :product, :product_description, :price, presence: true

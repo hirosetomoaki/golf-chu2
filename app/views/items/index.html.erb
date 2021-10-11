@@ -1,15 +1,26 @@
- <ul class='item-lists'>
+<div class='chat-main'>
+  <div class='chat-mide'>
+   <%= link_to "出品する", new_item_path, class: :create_room %>
+  </div>
+  <div class='room_right'>
+  <div class='item-contents'>
+    <h1 class='title'>出品アイテム</h1>
+    <div class="subtitle" >
+      新規投稿商品
+    </div>
+    
+    <ul class='card__wrapper '>
      <% if @items.present? %>
         <% @items.each do |item| %>
-          <li class='list'>
+          <li class='item_card'>
               <%= link_to item_path(item.id) do %>
                 <div class='item-img-content'>
                    <%= image_tag item.images[0], class:"item-img" %>
-                  <% if item.buy.present? %>
-                  <div class='sold-out'>
-                    <span>Sold Out!!</span>
-                  </div>
-                  <% end %>
+                  <%# <% if item.buy.present? %> %>
+                  <%# <div class='sold-out'> %>
+                    <%# <span>Sold Out!!</span> %>
+                  <%# </div> %>
+                  <%# <% end %> %>
                 </div>
                 <div class='item-info'>
                   <h3 class='item-name'>
@@ -17,12 +28,27 @@
                   </h3>
                   <div class='item-price'>
                     <span><%= item.price %>円<br><%= item.freight.name %></span>
-                    <div class='star-btn'>
-                      <%= image_tag "star.png", class:"star-icon" %>
-                      <span class='star-count'>0</span>
-                    </div>
                   </div>
                 </div>
               <% end %>
           </li>
         <% end %>
+     <% else %>
+        <li class='list'>
+          <%= link_to '#' do %>
+          <%= image_tag "golf-1208900_1920.jpg", class: "item-img" %>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              商品を出品してね！
+            </h3>
+            <div class='item-price'>
+              <span>99999999円<br>(税込み)</span>
+            </div>
+          </div>
+          <% end %>
+        </li>
+     <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
