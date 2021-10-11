@@ -4,7 +4,9 @@
     <title>GolfChu2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
+    <script src="price.js"></script>
+    <script src="preview.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
             <ul class="nav-page-list">
               <%= link_to '仲間探し', rooms_path, class: "list" %>
               <li class="list">コーチング</li>
-              <li class="list">商品</li>
+              <%= link_to 'アイテム探し', items_path, class: "list" %>
             </ul>
           </div>
           <div class="nav-login">
