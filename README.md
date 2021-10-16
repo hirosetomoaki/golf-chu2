@@ -32,12 +32,25 @@
 | state_id            | integer    | null: false |
 | freight_id          | integer    | null: false |
 | due_date_id         | integer    | null: false |
-| user                | references | null: false, foreign_key: true |
+| user_id             | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has_one :buy
-- has_one_attached :image
+- has_many_attached :image
+
+
+## buys
+| user_id             | references | null: false, foreign_key: true |
+| item_id             | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :address
+
 
 ## addressesテーブル
 
@@ -49,7 +62,7 @@
 | street              | string     | null: false |
 | building_name       | string     |             |
 | phone               | string     | null: false |
-| buy                 | references | null: false, foreign_key: true |
+| buy_id              | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -64,7 +77,7 @@
 | score     | string | null: false |
 | about_age | string | null: false |
 | member    | string | null: false |
-| user      | references | null: false, foreign_key: true |
+| user_id   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -74,10 +87,10 @@
 
 ## room_users テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user_id   | references | null: false, foreign_key: true |
+| room_id   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -86,11 +99,11 @@
 
 ## messages テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | text     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| content   | text     |                                |
+| user_id   | references | null: false, foreign_key: true |
+| room_id   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -99,13 +112,13 @@
 
 ## photosテーブル
 
-| Column            | Type       | Options                        |
+| Column             | Type       | Options                        |
 | ------------------ | ------     | ------------------------------ |
 | title              | string     | null: false                    |
 | club               | string     |                                |
 | caption            | text       |                                |
 | image              |            |                                |
-| user               | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
 
 ### Association
 
