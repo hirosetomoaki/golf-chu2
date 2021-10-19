@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :items
-
+  resources :items do
+    resources :buys, only: [:index, :create]
+  end
 end
