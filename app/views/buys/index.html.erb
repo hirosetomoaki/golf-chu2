@@ -42,6 +42,7 @@
       </div>
       <div class='card-input'>
           <%= form_with model: @buyaddress, url: item_buys_path, id: 'charge-form', class: 'form-wrap',local: true do |f| %>
+             <%= render 'shared/error_messages', model: f.object %>
             <div class='form-group'>
               <div class='form-text-g'>
                 <label class="form-text">カード情報</label>
